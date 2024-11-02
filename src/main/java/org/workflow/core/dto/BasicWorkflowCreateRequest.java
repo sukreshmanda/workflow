@@ -20,7 +20,7 @@ public class BasicWorkflowCreateRequest {
 
     public static Workflow toBasicWorkflow(BasicWorkflowCreateRequest workflowCreateRequest) {
         return BasicWorkflow.builder()
-                .id(new Random().nextInt())
+                .id(new Random().nextInt() & Integer.MAX_VALUE)
                 .createdAt(Instant.now())
                 .workflowStatus(workflowCreateRequest.getWorkflowStatus())
                 .lastUpdateAt(Instant.now())
